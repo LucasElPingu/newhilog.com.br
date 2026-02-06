@@ -1,12 +1,15 @@
 {
   "name": "newhilog.com.br",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Website institucional moderno para NEWHI Logística",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint . --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,css,json,md}\""
   },
   "dependencies": {
     "next": "16.1.6",
@@ -22,5 +25,19 @@
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "logística",
+    "transporte",
+    "rastreamento",
+    "NEWHI",
+    "Next.js",
+    "React"
+  ],
+  "author": "NEWHI Logística",
+  "license": "MIT"
 }

@@ -1,0 +1,202 @@
+.aboutUs {
+  padding: 6rem 1rem;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentSection {
+  width: 100%;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #0f2947;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contentBlock {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.contentBlock:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.contentBlock:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.subtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1e5a96;
+  margin-bottom: 0.75rem;
+}
+
+.text {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.valueItem {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #1e5a96;
+  transition: all 300ms ease-in-out;
+}
+
+.valueItem:hover {
+  background-color: #f3f4f6;
+  transform: translateY(-4px);
+  border-left-color: #06b6d4;
+  box-shadow: 0 8px 20px rgba(15, 41, 71, 0.1);
+}
+
+.valueTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f2947;
+  margin: 0 0 0.5rem 0;
+}
+
+.valueText {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, #0f2947 0%, #1e5a96 100%);
+  color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-top: 2.5rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.ctaText {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0 0 1.5rem 0;
+  opacity: 0.95;
+}
+
+.ctaButton {
+  background-color: #06b6d4;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
+}
+
+.ctaButton:hover {
+  background-color: #0891b2;
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.5);
+  transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .imageSection {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .contentSection {
+    animation: fadeInUp 0.8s ease-out;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutUs {
+    padding: 4rem 1rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaSection {
+    padding: 2rem;
+  }
+}

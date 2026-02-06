@@ -1,0 +1,165 @@
+.services {
+  padding: 6rem 1rem;
+  background-color: #f9fafb;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #0f2947;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(15, 41, 71, 0.08);
+  transition: all 300ms ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  border-top: 4px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.serviceCard:hover {
+  box-shadow: 0 12px 32px rgba(15, 41, 71, 0.15);
+  transform: translateY(-8px);
+  border-top-color: #1e5a96;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(22, 163, 74, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.serviceCard:hover::before {
+  opacity: 1;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #e0f2fe;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.serviceCard:hover .iconWrapper {
+  background: linear-gradient(135deg, #0891b2 0%, #16a34a 100%);
+  transform: scale(1.1) rotate(10deg);
+}
+
+.icon {
+  font-size: 2rem;
+  transition: transform 300ms ease-in-out;
+}
+
+.serviceCard:hover .icon {
+  filter: brightness(0) invert(1);
+  transform: scale(1.2);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f2947;
+  margin-bottom: 0.75rem;
+  transition: color 300ms ease-in-out;
+}
+
+.serviceCard:hover .cardTitle {
+  color: #1e5a96;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .serviceCard {
+    padding: 1.5rem;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

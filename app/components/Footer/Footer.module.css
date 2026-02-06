@@ -1,0 +1,114 @@
+.footer {
+  background: linear-gradient(135deg, #0f2947 0%, #1e5a96 100%);
+  color: #ffffff;
+  padding: 4rem 1rem 2rem;
+  margin-top: 6rem;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.contactInfo {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.contactInfo p {
+  margin-bottom: 0.75rem;
+}
+
+.contactInfo a {
+  color: #06b6d4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 300ms ease-in-out;
+}
+
+.contactInfo a:hover {
+  color: #ffffff;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin-bottom: 0.75rem;
+}
+
+.links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 300ms ease-in-out, padding-left 300ms ease-in-out;
+  display: inline-block;
+  padding-left: 0;
+}
+
+.links a:hover {
+  color: #06b6d4;
+  padding-left: 8px;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+}
+
+.bottom {
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.credit {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1rem 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .content {
+    gap: 2rem;
+  }
+
+  .contactInfo {
+    font-size: 0.9rem;
+  }
+}

@@ -40,7 +40,9 @@
 .header {
   text-align: center;
   margin-bottom: 4rem;
-  animation: fadeInDown 0.8s ease-out;
+  opacity: 0;
+  animation: fadeInDown 0.8s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 .title {
@@ -78,9 +80,9 @@
 }
 
 .itemVisible {
-  opacity: 1;
-  transform: translateY(0);
-  animation: slideInUp 0.6s ease-out;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation: slideInUp 0.6s ease-out forwards;
 }
 
 @keyframes slideInUp {

@@ -19,7 +19,8 @@ export default function Hero() {
         alt="Caminhão em rodovia - NEWHI Logística"
         fill
         priority
-        quality={85}
+        quality={90}
+        sizes="100vw"
         className={styles.backgroundImage}
       />
       <div className={styles.backgroundOverlay}></div>

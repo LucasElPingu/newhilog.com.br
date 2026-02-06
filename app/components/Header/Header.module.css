@@ -6,7 +6,9 @@
   background-color: #ffffff;
   box-shadow: 0 2px 8px rgba(15, 41, 71, 0.1);
   z-index: 1000;
-  animation: slideInDown 0.6s ease-out;
+  opacity: 0;
+  animation: slideInDown 0.6s ease-out forwards;
+  will-change: transform, opacity;
 }
 
 @keyframes slideInDown {

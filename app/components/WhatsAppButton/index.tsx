@@ -17,7 +17,7 @@ export default function WhatsAppButton() {
       title="Fale conosco no WhatsApp - Abrir em nova aba"
     >
       <Image
-        src="/images/icon-no-bg.png"
+        src="/images/icon.png"
         alt="WhatsApp"
         width={50}
         height={50}

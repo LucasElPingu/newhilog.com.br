@@ -1,10 +1,30 @@
 'use client';
 
-import { useCallback } from 'react';
 import Image from 'next/image';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './Hero.module.css';
 
+const carouselImages = [
+  {
+    src: '/images/car.jpeg',
+    alt: 'Carro de entrega - NEWHI Logística',
+  },
+  {
+    src: '/images/moto.jpeg',
+    alt: 'Moto de entrega - NEWHI Logística',
+  },
+];
+
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const handleContactClick = useCallback(() => {
     const modal = document.getElementById('contactModal');
     if (modal instanceof HTMLElement) {
@@ -14,17 +34,6 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <Image
-        src="/images/hero-truck.jpg"
-        alt="Caminhão em rodovia - NEWHI Logística"
-        fill
-        priority
-        quality={90}
-        sizes="100vw"
-        className={styles.backgroundImage}
-      />
-      <div className={styles.backgroundOverlay}></div>
-
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.title}>
@@ -54,6 +63,25 @@ export default function Hero() {
               Abrir WhatsApp
             </a>
           </div>
+        </div>
+
+        <div className={styles.carouselContainer}>
+          {carouselImages.map((image, index) => (
+            <div
+              key={index}
+              className={`${styles.carouselItem} ${index === currentImage ? styles.active : ''}`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                priority={index === 0}
+                quality={90}
+                className={styles.heroImage}
+              />
+            </div>
+          ))}
+          <div className={styles.carouselOverlay}></div>
         </div>
       </div>
 

@@ -1,12 +1,33 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < 10) {
+      setIsVisible(true);
+    } else if (currentScrollY > lastScrollY.current) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+
+    lastScrollY.current = currentScrollY;
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   const handleMenuToggle = useCallback(() => {
     setIsMenuOpen((prev) => !prev);
@@ -25,7 +46,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${!isVisible ? styles.headerHidden : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo} onClick={closeMenu}>
           <Image

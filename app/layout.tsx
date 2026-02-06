@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         type: 'image/png',
       },
       {
-        url: '/images/icon-no-bg.png',
+        url: '/images/icon.png',
         width: 192,
         height: 192,
         alt: 'Ícone NEWHI Logística',
@@ -38,24 +38,24 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: '/images/icon-no-bg.png',
-    apple: '/images/icon-no-bg.png',
+    icon: '/images/icon.png',
+    apple: '/images/icon.png',
     other: [
       {
         rel: 'apple-touch-icon',
-        url: '/images/icon-no-bg.png',
+        url: '/images/icon.png',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '192x192',
-        url: '/images/icon-no-bg.png',
+        url: '/images/icon.png',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        url: '/images/icon-no-bg.png',
+        url: '/images/icon.png',
       },
     ],
   },
@@ -90,8 +90,8 @@ export default function RootLayout({
         <meta name="twitter:image" content="/images/logo.png" />
         <meta name="twitter:title" content="NEWHI Logística | Soluções em Transporte e Rastreamento" />
         <meta name="twitter:description" content="Transporte de carga, rastreamento e logística nacional com segurança e confiabilidade." />
-        <link rel="icon" href="/images/icon-no-bg.png" />
-        <link rel="apple-touch-icon" href="/images/icon-no-bg.png" />
+        <link rel="icon" href="/images/icon.png" />
+        <link rel="apple-touch-icon" href="/images/icon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
